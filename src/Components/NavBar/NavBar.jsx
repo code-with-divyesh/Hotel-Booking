@@ -1,11 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import "./NavBar.css";
+import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
+const BookIcon = () => (
+  <svg
+    className="w-4 h-4 text-gray-700"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M5 19V4a1 1 0 011-1h12a1 1 0 011 1v13H7a2 2 0 00-2 2zm0 0a2 2 0 002 2h12M9 3v14m7 0v4"
+    />
+  </svg>
+);
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { openSignIn } = useClerk(); // 👈 corrected: openSignIn instead of openSignin
+  const { isSignedIn, user } = useUser(); // 👈 get auth state
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +37,11 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav
+      className={`navbar ${
+        isScrolled || location.pathname !== "/" ? "scrolled" : ""
+      }`}
+    >
       <div className="navbar-inner">
         <Link to="/">
           <img src={assets.logo} alt="logo" className="logo" />
@@ -27,15 +52,46 @@ const NavBar = () => {
           <Link to="/rooms">Hotels</Link>
           <Link to="/">Experience</Link>
           <Link to="/">About</Link>
-          <button className="dashboard-btn">Dashboard</button>
+          {!isSignedIn && <button className="dashboard-btn">Dashboard</button>}
         </div>
 
         <div className="nav-right">
           <img src={assets.searchIcon} alt="search" className="icon" />
-          <button className="login-btn">Login</button>
+          {isSignedIn && (
+            <UserButton>
+              <UserButton.MenuItems>
+                <UserButton.Action
+                  label="My Bookings"
+                  labelIcon={<BookIcon />}
+                  onClick={() => {
+                    "/my-Bookings";
+                  }}
+                />
+              </UserButton.MenuItems>
+            </UserButton>
+          )}
+
+          {!isSignedIn && (
+            <button className="login-btn" onClick={() => openSignIn()}>
+              Login
+            </button>
+          )}
         </div>
 
         <div className="menu-btn" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isSignedIn && (
+            <UserButton>
+              <UserButton.MenuItems>
+                <UserButton.Action
+                  label="My Bookings"
+                  labelIcon={<BookIcon />}
+                  onClick={() => {
+                    navigate("/myBookings");
+                  }}
+                />
+              </UserButton.MenuItems>
+            </UserButton>
+          )}
           <img src={assets.menuIcon} alt="menu" />
         </div>
       </div>
@@ -57,10 +113,23 @@ const NavBar = () => {
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
           About
         </Link>
-        <button className="dashboard-btn" onClick={() => setIsMenuOpen(false)}>
-          Dashboard
-        </button>
-        <button className="login-btn">Login</button>
+        {isSignedIn && (
+          <button
+            className="dashboard-btn"
+            onClick={() => {
+              setIsMenuOpen(false);
+              navigate("/owner");
+            }}
+          >
+            Dashboard
+          </button>
+        )}
+
+        {!isSignedIn && (
+          <button onClick={openSignIn} className="login-btn">
+            Login
+          </button>
+        )}
       </div>
     </nav>
   );

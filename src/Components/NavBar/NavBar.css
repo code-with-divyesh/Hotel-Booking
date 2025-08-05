@@ -15,6 +15,9 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
 }
+.navbar.scrolled .logo {
+  filter: invert(1);
+}
 
 .navbar-inner {
   max-width: 1200px;

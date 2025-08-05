@@ -1,0 +1,33 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.title-heading {
+  font-size: 2.5rem; /* equivalent to text-4xl */
+  font-family: serif;
+  margin: 0;
+}
+
+.title-subtext {
+  font-size: 18px; /* text-sm */
+  color: #475569; /* slate-600 */
+  margin-top: 0.5rem;
+  max-width: 768px; /* max-w-3xl */
+}

@@ -41,7 +41,7 @@ const Hero = () => {
             </div>
             <input type="date" id="Check out" />
           </div>
-          <div class="form-group guests">
+          <div className="form-group guests">
             <label for="guests">Guests</label>
             <input min="1" max="4" id="guests" type="number" placeholder="0" />
           </div>

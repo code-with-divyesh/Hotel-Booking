@@ -3,6 +3,7 @@ import "./AllRooms.css";
 import Title from "../../Components/Title/Title";
 import { roomsDummyData } from "../../assets/assets";
 import HotelCardAllRooms from "../../Components/HotelCardAllRooms/HotelCard";
+import Filters from "../../Components/Filters/Filters";
 const AllRooms = () => {
   return (
     <div className="container">
@@ -25,7 +26,7 @@ const AllRooms = () => {
         
       </div>
       <div className="room-right">
-        
+        <Filters/>
       </div>
     </div>
   );

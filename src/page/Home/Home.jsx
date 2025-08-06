@@ -4,6 +4,7 @@ import FeaturedDestination from "../../Components/FeaturedDestination/FeaturedDe
 import ExclusiveOffers from "../../Components/ExclusiveOffers/ExclusiveOffers";
 import Testimonials from "../../Components/Testimonials/Testimonials";
 import NewsLetter from "../../Components/NewsLetter/NewsLetter";
+import Footer from "../../Components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <ExclusiveOffers />
       <Testimonials />
       <NewsLetter />
+      <Footer />
     </>
   );
 };

@@ -38,9 +38,11 @@ import listIcon from "./listIcon.svg";
 import uploadArea from "./uploadArea.svg";
 import totalBookingIcon from "./totalBookingIcon.svg";
 import totalRevenueIcon from "./totalRevenueIcon.svg";
+import host from "./jack.png";
 
 // --------- EXPORTS ---------
 export const assets = {
+  host,
   logo,
   searchIcon,
   userIcon,

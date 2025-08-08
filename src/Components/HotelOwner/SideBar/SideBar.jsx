@@ -2,6 +2,7 @@ import React from "react";
 import { assets } from "../../../assets/assets";
 import { NavLink } from "react-router-dom";
 import "./SideBar.css";
+
 const SideBar = () => {
   const sideBarLinks = [
     {
@@ -10,7 +11,7 @@ const SideBar = () => {
       icon: assets.dashboardIcon,
     },
     {
-      name: " Add Room",
+      name: "Add Room",
       path: "/owner/add-room",
       icon: assets.addIcon,
     },
@@ -25,13 +26,15 @@ const SideBar = () => {
     <div className="sidebar">
       {sideBarLinks.map((item, index) => (
         <NavLink
-          className="sidebar-link"
           key={index}
-          end="/owner"
           to={item.path}
+          end={item.path === "/owner"} // only dashboard exact match
+          className={({ isActive }) =>
+            isActive ? "sidebar-link active" : "sidebar-link"
+          }
         >
-          <img src={item.icon} alt="Dashboard" />
-          <p class="link-text">{item.name}</p>
+          <img src={item.icon} alt={item.name} />
+          <p className="link-text">{item.name}</p>
         </NavLink>
       ))}
     </div>

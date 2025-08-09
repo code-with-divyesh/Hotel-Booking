@@ -90,6 +90,9 @@
   .offer-grid {
     grid-template-columns: 1fr;
   }
+  .offer-card {
+    margin: 0 0.5rem;
+  }
   .offer-container {
     padding: 20px 10px;
   }

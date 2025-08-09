@@ -118,30 +118,44 @@ input[type="date"] {
 
 @media (max-width: 1024px) {
   .hero-section {
-    padding: 0 64px;
+    flex-direction: column;
+    padding: 0 16px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
   }
 
   .custom-container {
-    padding-top: 120px;
+    height: auto;
+    align-items: flex-start;
+    text-align: left;
+    padding: 40px 16px;
   }
-
+  .custom-hotel-text {
+    font-size: 26px;
+  }
   .hero-heading {
-    font-size: 42px;
+    margin-top: 1.5rem;
+    font-size: 40px;
     max-width: 90%;
   }
 
   .hero-subtext {
-    font-size: 14px;
+    margin-top: 1rem;
+    font-size: 18px;
     max-width: 90%;
   }
 
   .booking-form {
-    flex-wrap: wrap;
     gap: 12px;
+    padding: 16px;
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: 2rem;
   }
 
   .form-group {
-    width: 45%;
+    width: 100%;
   }
 
   .search-btn {

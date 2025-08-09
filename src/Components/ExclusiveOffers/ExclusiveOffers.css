@@ -7,6 +7,7 @@
 .offer-header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .offer-btn {
   display: flex;
@@ -74,4 +75,33 @@
 }
 .offer-btn img {
   filter: invert(1);
+}
+@media (max-width: 1024px) {
+  .offer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .offer-container {
+    padding: 30px 15px;
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+  .offer-container {
+    padding: 20px 10px;
+  }
+  .offer-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .offer-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
 }

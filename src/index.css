@@ -5,6 +5,10 @@
   --color-primary: #2563eb;
   --color-secondary: #fbbf24;
 }
+body,
+html {
+  overflow-x: hidden;
+}
 * {
   margin: 0;
   padding: 0;

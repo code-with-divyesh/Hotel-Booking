@@ -19,10 +19,10 @@
   font-family: PlayFair;
 }
 .newsletter-des {
-  font-size: 1rem; /* text-sm */
-  color: rgba(107, 114, 128, 0.9); /* text-gray-500/90 */
-  margin-top: 0.5rem; /* mt-2 */
-  max-width: 36rem; /* max-w-xl */
+  font-size: 1rem;
+  color: rgba(107, 114, 128, 0.9);
+  margin-top: 0.5rem;
+  max-width: 36rem;
 }
 .newsletter-form {
   display: flex;
@@ -71,4 +71,71 @@
   margin-top: 1.5rem;
   font-size: 0.875rem;
   text-align: center;
+}
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .newsletter-container {
+    padding: 2.5rem 1.5rem;
+    margin: 5rem auto;
+  }
+
+  .newsletter-header h1 {
+    font-size: 2rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .newsletter-form input {
+    max-width: 100%;
+  }
+
+  .sub-btn {
+    width: 100%;
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .newsletter-container {
+    padding: 2rem 1.25rem;
+    margin: 3rem 0.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .newsletter-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter-des {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem; /* Input aur button ke beech space */
+  }
+
+  .newsletter-form input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    max-width: 100%;
+  }
+
+  .sub-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    margin-top: 0.25rem; /* Button ke upar thoda gap */
+  }
+
+  .newsletter-footer {
+    font-size: 0.8rem;
+    margin-top: 1.25rem;
+  }
 }

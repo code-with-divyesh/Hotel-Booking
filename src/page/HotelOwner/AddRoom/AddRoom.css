@@ -45,7 +45,7 @@ form {
 }
 
 .room,
-.price {
+.price-container {
   display: flex;
   flex-direction: column;
 }
@@ -124,4 +124,67 @@ form {
 
 .Addroom-btn:hover {
   background-color: #0056b3;
+}
+/* 📱 Tablet Responsive */
+@media (max-width: 1024px) {
+  form {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .room-price-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .room-selction {
+    width: 100%;
+  }
+
+  .price-input {
+    width: 100%;
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 640px) {
+  form {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+
+  .images-container {
+    grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr)); /* 100px */
+    gap: 0.625rem;
+  }
+
+  .uploadImage {
+    height: 6.25rem; /* 100px */
+  }
+
+  .room-price-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .room-selction,
+  .price-input {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .Amenities-container {
+    gap: 0.4rem;
+  }
+
+  .aminity {
+    font-size: 0.9rem;
+  }
+
+  .Addroom-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
 }

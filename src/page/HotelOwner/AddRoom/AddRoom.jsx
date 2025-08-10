@@ -70,7 +70,7 @@ const AddRoom = () => {
             <option value="Family Suite">Family Suite</option>
           </select>
         </div>
-        <div className="price">
+        <div className="price-container">
           <p className="price-text">
             Price <span className="text-xs">/Night</span>
           </p>

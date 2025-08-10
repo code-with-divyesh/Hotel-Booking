@@ -9,7 +9,9 @@
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.7);
+  padding: 16px; /* mobile pe thoda breathing space */
 }
+
 .model-form {
   display: flex;
   background: white;
@@ -18,10 +20,13 @@
   width: 100%;
   overflow: hidden;
 }
+
 .form-image {
   width: 50%;
   border-radius: 12px 0 0 12px;
+  object-fit: cover;
 }
+
 .form-content {
   position: relative;
   display: flex;
@@ -30,6 +35,7 @@
   width: 50%;
   padding: 40px;
 }
+
 .close-icon {
   position: absolute;
   top: 16px;
@@ -38,24 +44,31 @@
   width: 16px;
   cursor: pointer;
 }
+
 .form-title {
   font-size: 24px;
   font-weight: 600;
   margin-top: 24px;
+  text-align: center;
 }
+
 .form-group {
   width: 100%;
   margin-top: 16px;
 }
+
 .form-group.small {
   max-width: 240px;
   margin-right: auto;
 }
+
 label {
-  font-weight: 500;
+  font-size: 21px;
+  font-weight: 600;
   color: #6b7280;
   display: block;
 }
+
 input,
 textarea,
 select {
@@ -67,9 +80,11 @@ select {
   font-weight: 300;
   outline-color: #6366f1;
 }
+
 textarea {
   resize: none;
 }
+
 .submit-btn {
   background: #6366f1;
   color: white;
@@ -83,4 +98,50 @@ textarea {
 }
 .submit-btn:hover {
   background: #4f46e5;
+}
+
+/* Tablet view (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .form-image {
+    width: 40%;
+  }
+  .form-content {
+    width: 60%;
+    padding: 24px;
+  }
+  .form-title {
+    font-size: 20px;
+  }
+}
+
+/* Mobile view (max-width: 768px) */
+/* Mobile view (max-width: 768px) */
+@media (max-width: 768px) {
+  .model-form {
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  .form-image {
+    display: none; /* 📌 Mobile me image hat gayi */
+  }
+  .form-content {
+    width: 100%;
+    padding: 20px;
+  }
+  .form-title {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 18px;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
 }

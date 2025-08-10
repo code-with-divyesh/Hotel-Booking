@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./page/Home/Home";
@@ -14,13 +14,31 @@ import ListRoom from "./page/HotelOwner/ListRoom/ListRoom";
 
 const App = () => {
   const isOwnerpath = useLocation().pathname.includes("owner");
+
+  // State for showing HotelRegister on Home page
+  const [showHotelRegister, setShowHotelRegister] = useState(false);
+
   return (
     <div>
-      {false && <HotelRegister />}
-      {!isOwnerpath && <NavBar />}
+      {!isOwnerpath && (
+        <NavBar
+          onListYourHotelClick={() => setShowHotelRegister(true)} // pass callback
+        />
+      )}
+
       <div className="min-h-[70vh]">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                {showHotelRegister && (
+                  <HotelRegister onClose={() => setShowHotelRegister(false)} />
+                )}
+              </>
+            }
+          />
           <Route path="/rooms" element={<AllRooms />} />
           <Route path="/rooms/:id" element={<RoomDetails />} />
           <Route path="/my-Bookings" element={<MyBookings />} />
@@ -31,6 +49,7 @@ const App = () => {
           </Route>
         </Routes>
       </div>
+
       {!isOwnerpath && <Footer />}
     </div>
   );

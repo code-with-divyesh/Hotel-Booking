@@ -1,13 +1,18 @@
 import React from "react";
 import { assets } from "../../assets/assets";
 import "./HotelRegister.css";
-const HotelRegister = () => {
+const HotelRegister = ({ onClose }) => {
   return (
     <div className="model-overlay">
       <div className="model-form">
         <img src={assets.regImage} alt="regImage" className="form-image" />
         <div className="form-content">
-          <img src={assets.closeIcon} alt="close-icon" className="close-icon" />
+          <img
+            src={assets.closeIcon}
+            alt="close-icon"
+            className="close-icon"
+            onClick={onClose}
+          />
           <p className="form-title">Register Your Hotel</p>
           <div class="form-group">
             <label for="name">Hotel Name</label>

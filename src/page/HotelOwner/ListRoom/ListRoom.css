@@ -93,3 +93,52 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+/* 📱 Tablet Responsive */
+@media (max-width: 1024px) {
+  .hotel-table th,
+  .hotel-table td {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 640px) {
+  .hotel-text {
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+  }
+
+  /* Table ko horizontal scroll dena */
+  .hotel-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 0;
+  }
+
+  .hotel-table table {
+    min-width: 500px; /* Taaki scroll ho sake */
+  }
+
+  .hotel-table th,
+  .hotel-table td {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  /* Toggle switch thoda chhota */
+  .switch {
+    width: 36px;
+    height: 18px;
+  }
+
+  .slider:before {
+    height: 14px;
+    width: 14px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(18px);
+  }
+}

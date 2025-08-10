@@ -182,3 +182,72 @@
 .contact-button:hover {
   background-color: #333;
 }
+
+@media (max-width: 1024px) {
+  .room-maincontainer {
+    padding: 5rem 3rem;
+  }
+  .availability-form {
+    padding-left: 5rem;
+  }
+  .image-container {
+    flex-direction: column;
+  }
+  .thumbnail-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .room-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .room-maincontainer {
+    padding: 5rem 1rem 2rem 1rem; /* top padding increased so heading not hidden */
+  }
+
+  .room-heading-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+  }
+  .room-heading-top h1 {
+    font-size: 1.5rem;
+  }
+  .room-heading-top .heading-tag {
+    font-size: 0.5rem;
+    padding: 4px 10px;
+  }
+  .availability-form {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .image-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .thumbnail-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .room-detail {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .room-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .host-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .contact-button {
+    width: 100%;
+  }
+}

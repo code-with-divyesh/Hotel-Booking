@@ -61,3 +61,33 @@ input[type="date"] {
   height: 50px; /* Or whatever height fits your design */
   background-color: black;
 }
+@media (max-width: 1024px) {
+  .booking-detail-form {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-detail-form {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 100%;
+    gap: 1rem;
+    padding: 16px;
+  }
+  .form-group-detail {
+    width: 100%;
+  }
+  .form-group-detail input[type="text"],
+  .form-group-detail input[type="number"],
+  .form-group-detail input[type="date"] {
+    width: 100%;
+  }
+  .search-btn-detail {
+    justify-content: center;
+    width: 100%;
+  }
+  .divider {
+    display: none;
+  }
+}

@@ -137,3 +137,57 @@
 .des-card:focus {
   outline: none;
 }
+/* Tablet view */
+@media (max-width: 1024px) {
+  .des-card {
+    gap: 20px;
+  }
+  .hc-img-wrap {
+    flex: none;
+    max-width: 100%;
+  }
+  .hc-img-wrap img {
+    width: 100%;
+    height: auto; /* image ka aspect ratio maintain karega */
+  }
+  .hotel-title {
+    font-size: 26px;
+  }
+  .price {
+    font-size: 18px;
+  }
+}
+/* Mobile view */
+@media (max-width: 768px) {
+  .des-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hc-img-wrap {
+    flex: none;
+    max-width: 100%;
+  }
+  .hc-img-wrap img {
+    width: 100%;
+    height: auto; /* yaha bhi fixed height hatadi */
+  }
+  .card-content {
+    flex: none;
+  }
+  .hotel-title {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  .hotel-city {
+    font-size: 12px;
+  }
+  .hc-rating .reviews,
+  .hotel-location,
+  .amenity-pill {
+    font-size: 12px;
+  }
+  .price {
+    flex-direction: row;
+    font-size: 16px;
+  }
+}

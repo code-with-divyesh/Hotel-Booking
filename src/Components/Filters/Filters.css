@@ -152,3 +152,31 @@
     border-radius: 6px;
   }
 }
+@media (max-width: 1023px) and (min-width: 768px) {
+  .filters-card {
+    width: 100%;
+    max-width: 400px; /* slightly bigger for tablet */
+    margin: 0 auto;
+    border-radius: 6px;
+  }
+  .filters-bottom {
+    display: flex;
+  }
+  .lg-show {
+    display: none;
+  }
+}
+
+/* MOBILE (<768px) */
+@media (max-width: 767px) {
+  .filters-card {
+    width: 100%;
+    border-radius: 6px;
+  }
+  .filters-bottom {
+    display: flex;
+  }
+  .lg-show {
+    display: none;
+  }
+}

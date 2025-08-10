@@ -19,3 +19,34 @@
   width: auto;
   filter: invert(1);
 }
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .nav {
+    padding: 10px 16px;
+  }
+
+  .nav-inner {
+    margin-left: 10px;
+  }
+
+  .nav-logo {
+    height: 36px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .nav {
+    padding: 8px 12px;
+  }
+
+  .nav-inner {
+    flex-direction: row;
+    margin-left: 0;
+  }
+
+  .nav-logo {
+    height: 32px;
+  }
+}

@@ -20,7 +20,7 @@ const BookIcon = () => (
   </svg>
 );
 
-const NavBar = () => {
+const NavBar = ({ onListYourHotelClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { openSignIn } = useClerk(); // 👈 corrected: openSignIn instead of openSignin
@@ -53,6 +53,16 @@ const NavBar = () => {
           <Link to="/">Experience</Link>
           <Link to="/">About</Link>
           {!isSignedIn && <button className="dashboard-btn">Dashboard</button>}
+          {isSignedIn && (
+            <button
+              className="dashboard-btn"
+              onClick={() => {
+                if (onListYourHotelClick) onListYourHotelClick();
+              }}
+            >
+              List Your Hotel
+            </button>
+          )}
         </div>
 
         <div className="nav-right">
@@ -128,6 +138,16 @@ const NavBar = () => {
         {!isSignedIn && (
           <button onClick={openSignIn} className="login-btn">
             Login
+          </button>
+        )}
+        {isSignedIn && (
+          <button
+            className="dashboard-btn"
+            onClick={() => {
+              if (onListYourHotelClick) onListYourHotelClick();
+            }}
+          >
+            List Your Hotel
           </button>
         )}
       </div>

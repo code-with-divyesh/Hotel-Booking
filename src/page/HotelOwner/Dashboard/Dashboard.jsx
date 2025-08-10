@@ -50,10 +50,19 @@ const Dashboard = () => {
           <tbody>
             {dashboardData.bookings.map((item, index) => (
               <tr key={index}>
-                <td className="username">{item.user.username}</td>
-                <td className="room-name">{item.room.roomType}</td>
-                <td className="total-amount">${item.totalPrice}</td>
-                <td className={`payment-status ${item.status.toLowerCase()}`}>
+                <td className="username" data-label="User Name">
+                  {item.user.username}
+                </td>
+                <td className="room-name" data-label="Room Name">
+                  {item.room.roomType}
+                </td>
+                <td className="total-amount" data-label="Total Amount">
+                  ${item.totalPrice}
+                </td>
+                <td
+                  className={`payment-status ${item.status.toLowerCase()}`}
+                  data-label="Payment Status"
+                >
                   {item.status}
                 </td>
               </tr>

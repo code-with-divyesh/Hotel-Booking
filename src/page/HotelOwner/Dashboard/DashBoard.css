@@ -115,3 +115,65 @@ total-amount {
 .payment-status.cancelled {
   color: #dc2626;
 }
+/* 📊 Stats Cards Responsive */
+@media (max-width: 1024px) {
+  /* Tablet */
+  .stats-container {
+    flex-wrap: wrap; /* Wrap cards in multiple rows */
+  }
+  .stats-card {
+    flex: 1 1 calc(50% - 1rem); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 640px) {
+  /* Mobile */
+  .stats-container {
+    flex-direction: column; /* Single column */
+  }
+  .stats-card {
+    width: 100%;
+  }
+}
+
+/* 📋 Recent Bookings Table Responsive */
+@media (max-width: 640px) {
+  /* Hide some columns */
+  .recent-bookings-table .room-name {
+    display: none;
+  }
+
+  /* Make table display as cards */
+  .recent-bookings-table thead {
+    display: none;
+  }
+
+  .recent-bookings-table table,
+  .recent-bookings-table tbody,
+  .recent-bookings-table tr,
+  .recent-bookings-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .recent-bookings-table tr {
+    margin-bottom: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+
+  .recent-bookings-table td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  /* Show label before value */
+  .recent-bookings-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #555;
+  }
+}
